@@ -44,20 +44,20 @@ Content-based filtering is a recommendation system technique that suggests items
    pip install -r requirements.txt
    ```
 
-4. **Add the following script to your `package.json` in the frontend directory:**
-   ```json
-   "scripts": {
-       "both": "concurrently \"npm run dev\" \"cd ./backend && flask run\""
-   }
-   ```
-5. **For building models, download the notebook from the colab link and save it to the `backend/notebooks/` directory:**
+4. **For building models, download the notebook from the colab link and save it to the `backend/notebooks/` directory:**
    [Colab Link](https://colab.research.google.com/drive/1JiZCyvLjhdZyZYfYd57S4nqF0CMC_lX7)
 ### Running the Application
 
-To run both the frontend and backend simultaneously, execute the following command from the `frontend` directory:
+5. **To run both the frontend and backend simultaneously, execute the following command from the root directory:**
 
 ```bash
-npm run both
+npm run dev
+```
+
+in another terminal, 
+```bash
+cd backend
+flask run
 ```
 
 This will start the Vite development server and the Flask backend. You can access the application at `http://localhost:5000`.
