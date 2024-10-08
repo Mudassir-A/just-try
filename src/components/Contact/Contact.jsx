@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // For Styling
 import { Button, makeStyles } from "@material-ui/core";
-import { Form, Container } from "react-bootstrap";
+import { Form, Container, Card } from "react-bootstrap";
 
 // Firebase
 import { useNavigate } from "react-router-dom";
@@ -116,67 +116,69 @@ const Contact = () => {
         </p>
 
         {/* Form */}
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicName">
-            <Form.Label>Full Name</Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              value={name}
-              id="name"
-              placeholder="Enter your Name"
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              id="email"
-              value={email}
-              onChange={handleChange}
-              placeholder="Enter your email address"
-            />
-          </Form.Group>
+        <Card className="p-5">
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Label>Full Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={name}
+                id="name"
+                placeholder="Enter your Name"
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                id="email"
+                value={email}
+                onChange={handleChange}
+                placeholder="Enter your email address"
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Phone Number</Form.Label>
-            <Form.Control
-              type="phone"
-              name="number"
-              id="number"
-              value={number}
-              onChange={handleChange}
-              placeholder="Enter your Phone Number"
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Enter Your Query</Form.Label>
-            <Form.Control
-              type="text"
-              name="text"
-              id="text"
-              value={text}
-              onChange={handleChange}
-              placeholder="Tell Us About Your Problem"
-            />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="phone"
+                name="number"
+                id="number"
+                value={number}
+                onChange={handleChange}
+                placeholder="Enter your Phone Number"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Enter Your Query</Form.Label>
+              <Form.Control
+                type="text"
+                name="text"
+                id="text"
+                value={text}
+                onChange={handleChange}
+                placeholder="Tell Us About Your Problem"
+              />
+            </Form.Group>
 
-          {/* In case of Error in Form Validation */}
-          {error ? <p style={{ color: "red" }}>{error}</p> : null}
+            {/* In case of Error in Form Validation */}
+            {error ? <p style={{ color: "red" }}>{error}</p> : null}
 
-          {/* Button */}
-          <Button
-            onClick={handleSubmit}
-            disabled={loading}
-            variant="contained"
-            color="primary"
-            type="submit"
-          >
-            {loading ? "Submitting..." : "Submit"}
-          </Button>
-        </Form>
+            {/* Button */}
+            <Button
+              onClick={handleSubmit}
+              disabled={loading}
+              variant="contained"
+              color="primary"
+              type="submit"
+            >
+              {loading ? "Submitting..." : "Submit"}
+            </Button>
+          </Form>
+        </Card>
       </Container>
     </>
   );
